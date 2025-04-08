@@ -3,8 +3,6 @@
         Ana Sayfa
     </x-slot>
 
-
-
-    <h1>{{ $title }}</h1>
-    <p>{{ $description }}</p>
+    <h1>{{ $job['title'] }}</h1>
+    <p>{{ $job['location'] }}</p>
 </x-layout>

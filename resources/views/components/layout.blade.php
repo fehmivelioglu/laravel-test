@@ -31,6 +31,9 @@
                         <li class="nav-item">
                             <x-nav-link href="/greeting" :active="request()->is('greeting')">Greeting</x-nav-link>
                         </li>
+                        <li class="nav-item">
+                            <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+                        </li>
                     </ul>
                 </div>
             </div>
