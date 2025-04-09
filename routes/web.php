@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 
 $jobs = [
     [
@@ -20,11 +21,12 @@ $jobs = [
     ],
 ];
 
-Route::get('/', function () use ($jobs) {
+// * dd -> die and dump
+Route::get('/', function () {
     return view('index', [
         'title' => 'Ana Sayfa',
         'description' => 'Bu sayfa ana sayfasıdır.',
-        'jobs' => $jobs
+        'jobs' => Job::all()
     ]);
 });
 
