@@ -11,7 +11,9 @@
 
         @endforeach @dump(get_defined_vars())
     </ul>
-
+    <div>
+        {{ $jobs->links() }}
+    </div>
 
     <h1>{{ $title }}</h1>
     <p>{{ $description }}</p>

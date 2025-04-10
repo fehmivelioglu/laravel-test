@@ -52,12 +52,17 @@ Route::get('/greeting', function () {
         ->with('occupation', 'Astronaut');
 });
 
-Route::get('/jobs', function () use ($jobs) {
+Route::get('/jobs', function () {
+    $jobs = Job::with('employer')->latest()->paginate(5);
     return view('jobs', [
         'title' => 'İş İlanları',
         'description' => 'Mevcut iş ilanları listesi',
         'jobs' => $jobs
     ]);
+});
+
+Route::get('/jobs/create', function () {
+    return view('jobs.create');
 });
 
 Route::get('/jobs/{id}', function ($id) use ($jobs) {
@@ -70,4 +75,21 @@ Route::get('/jobs/{id}', function ($id) use ($jobs) {
     return view('job', [
         'job' => $job,
     ]);
+});
+
+Route::post('/jobs', function () {
+    // dd(request()->all());
+
+    request()->validate([
+        'title' => ['required', 'min:3', 'max:255'],
+        'location' => ['required', 'min:3', 'max:255'],
+    ]);
+
+    Job::create([
+        'title' => request('title'),
+        'location' => request('location'),
+        'employer_id' => 1,
+    ]);
+
+    return redirect('/jobs');
 });
