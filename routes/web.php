@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
 // * dd -> die and dump
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index', [
         'title' => 'Ana Sayfa',
         'description' => 'Bu sayfa ana sayfasıdır.',
