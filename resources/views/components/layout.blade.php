@@ -19,20 +19,20 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <x-nav-link href="/" :active="request()->is('/')">Ana
+                            <x-nav-link href="/j" :active="request()->is('j')">Ana
                                 Sayfa</x-nav-link>
                         </li>
                         <li class="nav-item">
-                            <x-nav-link href="/about" :active="request()->is('about')">Hakkımızda</x-nav-link>
+                            <x-nav-link href="/j/about" :active="request()->is('j/about')">Hakkımızda</x-nav-link>
                         </li>
                         <li class="nav-item">
-                            <x-nav-link href="/welcome" :active="request()->is('welcome')">Welcome</x-nav-link>
+                            <x-nav-link href="/j/welcome" :active="request()->is('j/welcome')">Welcome</x-nav-link>
                         </li>
                         <li class="nav-item">
-                            <x-nav-link href="/greeting" :active="request()->is('greeting')">Greeting</x-nav-link>
+                            <x-nav-link href="/j/greeting" :active="request()->is('j/greeting')">Greeting</x-nav-link>
                         </li>
                         <li class="nav-item">
-                            <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+                            <x-nav-link href="/j/jobs" :active="request()->is('j/jobs')">Jobs</x-nav-link>
                         </li>
                     </ul>
                 </div>

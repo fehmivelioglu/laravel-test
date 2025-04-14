@@ -1,10 +1,5 @@
-<x-layout>
-    <x-slot name="title">
-        Ana Sayfa
-    </x-slot>
+@extends('components.layout-min')
+
+@section('title', 'Ana Sayfa')
 
 
-
-    <h1>{{ $title }}</h1>
-    <p>{{ $description }}</p>
-</x-layout>

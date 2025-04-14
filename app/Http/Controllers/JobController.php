@@ -27,7 +27,7 @@ class JobController extends Controller
     public function index()
     {
         $jobs = Job::with('employer')->latest()->paginate(5);
-        return view('jobs', [
+        return view('jobs.jobs', [
             'title' => 'İş İlanları',
             'description' => 'Mevcut iş ilanları listesi',
             'jobs' => $jobs
@@ -47,7 +47,7 @@ class JobController extends Controller
             abort(404, 'İş ilanı bulunamadı.');
         }
 
-        return view('job', [
+        return view('jobs.job', [
             'job' => $job,
         ]);
     }
@@ -67,6 +67,6 @@ class JobController extends Controller
             'employer_id' => 1,
         ]);
 
-        return redirect('/jobs');
+        return redirect('/j/jobs');
     }
 }
